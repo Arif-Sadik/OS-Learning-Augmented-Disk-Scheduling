@@ -1,0 +1,18 @@
+{
+  "min_cylinder": 0,
+  "max_cylinder": 199,
+  "initial_head": 50,
+  "request_count": 40,
+  "samples_per_workload_type": 160,
+  "evaluation_windows_per_workload_type": 50,
+  "workload_shift_windows_per_phase": 12,
+  "training_seed_start": 1000,
+  "evaluation_seed_start": 10000,
+  "workload_shift_seed_start": 30000,
+  "scan_direction": "up",
+  "decision_tree_random_state": 307,
+  "decision_tree_max_depth": 4,
+  "decision_tree_min_samples_leaf": 8,
+  "test_split": 0.25,
+  "label_tie_breaking": "FCFS, then SSTF, then SCAN, then C-SCAN"
+}
