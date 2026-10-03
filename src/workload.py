@@ -55,15 +55,12 @@ def generate_directional(
     min_cylinder: int = 0,
     max_cylinder: int = 199,
 ) -> list[int]:
-    """Generate mostly monotonic requests with small jitter."""
+    """Generate mostly upward sequential requests with small jitter."""
 
-    upward = bool(rng.integers(0, 2))
     start_low = int(rng.integers(min_cylinder, min_cylinder + 40))
     start_high = int(rng.integers(max_cylinder - 39, max_cylinder + 1))
     base = np.linspace(start_low, start_high, count)
-    if not upward:
-        base = base[::-1]
-    jitter = rng.normal(0, 4, size=count)
+    jitter = rng.normal(0, 2, size=count)
     return _clip(base + jitter, min_cylinder, max_cylinder)
 
 
@@ -127,19 +124,19 @@ def generate_workload_shift(
     min_cylinder: int = 0,
     max_cylinder: int = 199,
 ) -> list[WorkloadSample]:
-    """Generate a reproducible shift from locality to random access."""
+    """Generate a reproducible shift from directional to random access."""
 
     samples: list[WorkloadSample] = []
     for index in range(windows_per_phase):
         samples.append(
             generate_workload(
-                "localized",
+                "directional",
                 seed + index,
                 count,
                 initial_head,
                 min_cylinder,
                 max_cylinder,
-                phase="phase_1_localized",
+                phase="phase_1_directional",
             )
         )
     for index in range(windows_per_phase):

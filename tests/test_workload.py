@@ -37,6 +37,6 @@ def test_workload_shift_records_phase_boundary():
     samples = generate_workload_shift(seed=700, windows_per_phase=3, count=10)
 
     assert len(samples) == 6
-    assert [sample.phase for sample in samples[:3]] == ["phase_1_localized"] * 3
+    assert [sample.phase for sample in samples[:3]] == ["phase_1_directional"] * 3
     assert [sample.phase for sample in samples[3:]] == ["phase_2_uniform"] * 3
-    assert [sample.workload_type for sample in samples] == ["localized"] * 3 + ["uniform"] * 3
+    assert [sample.workload_type for sample in samples] == ["directional"] * 3 + ["uniform"] * 3
