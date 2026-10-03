@@ -119,9 +119,3 @@ Mean total head movement highlights from `results/summary_results.csv`:
 - Bursty: FCFS 600.80, SSTF 206.86, learned selector 206.86, oracle 206.80
 
 The workload-shift experiment records per-window predictions in `results/workload_shift_results.csv`. In the directional phase, the learned selector averaged 214.50 cylinders against an oracle average of 193.25. In the uniform phase, it averaged 287.58 cylinders against an oracle average of 286.08.
-
-## Paper
-
-The paper source is `paper/term_paper.tex`, and references are in `paper/references.bib`. The paper is generated from the result CSV files by `src/write_paper.py`, so the quantitative claims are traceable to the experiment output.
-
-No local LaTeX compiler was found during development. The paper is ready to compile in Overleaf or another LaTeX environment with BibTeX support.
