@@ -50,9 +50,6 @@ figures/
   learned_selector_comparison.png
   workload_shift_behavior.png
   decision_tree_confusion_matrix.png
-paper/
-  term_paper.tex
-  references.bib
 run_all.ps1
 requirements.txt
 ```
